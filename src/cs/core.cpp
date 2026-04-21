@@ -1,5 +1,5 @@
 /**
- * @filt
+ * @file
  * @brief Core utils for computer science
  * @date 2026-04-21
  * @authors YAS
@@ -8,7 +8,10 @@
 
 #include <string>
 namespace cs{
-
+	/**
+	* @todo Не эффективная реалезация.
+	* 	Заменить строка+сивол и reverse
+	*/
 	std::string dec2hex(unsigned int decimal){
 		std::string hexademal;
 		const char hex_digits[] = "0123456789ABCDEF";
@@ -19,6 +22,11 @@ namespace cs{
 		return hexademal;
 	}
 
+	/**
+	 * @bug Не обработаны ошибки во входной строке
+	 * @todo 1. Учесть переполнение unsigned int
+	 *	 2. Учесть не 16-ные символы во входной строке
+	*/
 	unsigned int hex2dec(const std::string & hexademal){
 		unsigned int decimal = 0;
 		for(const char ch : hexademal) {
