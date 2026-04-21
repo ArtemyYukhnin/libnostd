@@ -19,17 +19,17 @@ print_header(){
 
 print_step(){
 	currentdate=$(date +"%Y-%m-%d %H:%M:%S")
-	echo "${currentdate}{BLUE}[ * ] ${1}${NC}"
+	echo "${currentdate}${BLUE}[ * ] ${1}${NC}"
 }
 
 print_success(){
 	currentdate=$(date +"%Y-%m-%d %H:%M:%S")
-        echo "${currentdate}{GREEN}[ V ] ${1}${NC}"
+        echo "${currentdate}${GREEN}[ V ] ${1}${NC}"
 }
 
 print_error(){
         currentdate=$(date +"%Y-%m-%d %H:%M:%S")
-        echo "${currentdate}{RED}[ X ] ${1}${NC}"
+        echo "${currentdate}${RED}[ X ] ${1}${NC}"
 }
 
 
@@ -48,7 +48,8 @@ print_header "Configure the project"
 print_step "Running CMake in $BUILDDIR..."
 cmake -S "$ROOTDIR" -B "$BUILDDIR"
 
-if [ $? -eq 0 ]; then
+ret=$?
+if [ $ret -eq 0 ]; then
 	print_success "CMake configuration completed successfully."
 else
 	print_error "CMake configuration failed."
@@ -59,7 +60,8 @@ print_header "Building the project"
 print_step "Building the project in $BUILDDIR..."
 cmake --build "$BUILDDIR"
 
-if [ $? -eq 0 ]; then
+ret=$?
+if [ $ret -eq 0 ]; then
         print_success "Project build completed successfully."
 else
         print_error "Project build failed."
