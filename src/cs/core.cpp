@@ -1,3 +1,11 @@
+/**
+ * @filt
+ * @brief Core utils for computer science
+ * @date 2026-04-21
+ * @authors YAS
+ * @copyright MIT License
+*/
+
 #include <string>
 namespace cs{
 
