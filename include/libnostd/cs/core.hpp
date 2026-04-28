@@ -24,5 +24,12 @@ namespace cs{
         */
 
 	unsigned int hex2dec(const std::string & hexademal);
+
+	/**
+	 * @brief Преобразует из десятичной системы в двоичную
+	 * @param[in] decimal Целое десятичное цисло
+	 * @return std::string число в двоичной системе счисления
+	*/
+	std::string dec2bin(unsigned int decimal);
 }
 #endif
