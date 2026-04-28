@@ -16,6 +16,6 @@ jobs:
     steps:
       - uses: actions/checkout@v6
       - name: Build source code
-        run: | 
+        run: |
           ./scripts/build.sh
-        timeout-minutes: 1
+        timeout-minutes: 10
