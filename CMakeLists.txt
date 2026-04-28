@@ -12,5 +12,5 @@ set(CMAKE_CXX_STANDART 20)
 
 add_subdirectory(examples)
 
-#add_subdirectory(tests)
+add_subdirectory(tests)
 
