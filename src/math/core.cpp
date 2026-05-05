@@ -39,4 +39,57 @@ namespace math{
 		return xn;
 	}
 
+ 	unsigned long factorial(unsigned long n, unsigned long m){
+		unsigned long res = 1UL;
+		for (unsigned long i = 1; i < n; ++i){
+			res *= (i+1);
+			res %= m;
+		}
+		return res;
+	}
+
+        unsigned long prod(unsigned long a, unsigned long b, unsigned long m){
+		if(b<a){
+			unsigned tmp = a;
+			a = b;
+			b = tmp;
+		}
+		unsigned long long res = a;
+		while(a < b){
+			++a;
+			res *= a;
+			res %= m;
+		}
+		return res;
+	}
+
+	unsigned long binpowmod(unsigned long a, unsigned long deg, unsigned long m){
+		unsigned long res = 1UL;
+		while(deg != 0){
+			if((deg & 1)){
+				res = (res*a)%m;
+			}
+			a = (a*a)%m;
+			deg >>= 1;
+		}
+		return res;
+	}
+
+	unsigned long invmod(unsigned long a, unsigned long m){
+		return binpowmod(a, m-2, m);
+	}
+
+	unsigned long gcdex(unsigned long a, unsigned long b, unsigned long &x, unsigned long &y){
+		if(a == 0){
+			x = 0;
+			y = 1;
+			return b;
+		}
+		unsigned long x1 = 0;
+		unsigned long y1 = 0;
+		unsigned long d = gcdex(b%a, a, x1, y1);
+		x = y1 - (b/a)*x1;
+		y = x1;
+		return d;
+	}
 }
