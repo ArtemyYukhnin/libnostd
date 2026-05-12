@@ -21,7 +21,7 @@ namespace math{
 	 *            Если последний бит 1 (не равен 0), домножаем результат на base
          * @param[in] base Основание. Вещественное число
 	 * @param[in] exp Экспонента. Неотрицательное длинное целое
-         * @return    число, возведенное в степень \f$ {base} ^ {exp} \f$
+         * @return    число, возведенное в степень \f$ {base}^{exp} \f$
         */
 
 	double fast_power(double base, unsigned long long exp);
@@ -38,23 +38,23 @@ namespace math{
 	double sqrt_heron(double num);
 
 	/**
-         * @brief Факториал по модулю (n! mod m)
-         * @details Вычисление \f$ (1 \cdot 2 \cdot ... \cdot n) \mod m \f$
+         * @brief     Факториал по модулю (n! mod m)
+         * @details   Вычисление \f$ (1 \cdot 2 \cdot ... \cdot n) \mod m \f$
          * @param[in] n - положительное целое число
 	 * @param[in] m - положительное натуральное число
-	 * @return Факториал n по модулю m (n! mod m)
+	 * @return    Факториал n по модулю m (n! mod m)
 	*/
 
 	unsigned long factorial(unsigned long n, unsigned long m);
 
         /**
-         * @brief Произведение чисел из диапазона по модулю.
-         * @details Для заданных a и b (a<b) вычисление
-	 *	    \f$ (a \cdot (a+1) \cdot ... \cdot (b-1) \cdot b) \mod m  \f$
+         * @brief     Произведение чисел из диапазона по модулю.
+         * @details   Для заданных a и b (a<b) вычисление
+	 *	      \f$ (a \cdot (a+1) \cdot ... \cdot (b-1) \cdot b) \mod m  \f$
          * @param[in] a - положительное целое число.
          * @param[in] b - положительное целое число.
 	 * @param[in] m - положительное натуральное число.
-         * @return Произведение чисел от a до b по модулю m.
+         * @return    Произведение чисел от a до b по модулю m.
         */
 
         unsigned long prod(unsigned long a, unsigned long b, unsigned long m);
