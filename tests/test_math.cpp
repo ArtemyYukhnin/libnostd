@@ -98,3 +98,48 @@ TEST(MATH, gcd){
 	EXPECT_EQ(gcdex(0, 100, x, y), 100);
 	EXPECT_EQ(gcdex(100, 0, x, y), 100);
 }
+
+TEST(MATH_STATISTICS, mean){
+        using math::statistics::mean;
+	{
+		double M[] = {1, 1, 1, 1, 1, 1, 1, 1, 1, 1};
+		int n = sizeof(M)/sizeof(M[0]);
+		EXPECT_DOUBLE_EQ(mean(M, n), 1);
+	}
+        {
+                double M[] = {10};
+                int n = sizeof(M)/sizeof(M[0]);
+                EXPECT_DOUBLE_EQ(mean(M, n), 10);
+        }
+        {
+                double M[] = {1, 2, 3 ,4 ,5 ,6 ,7 ,8, 9};
+                int n = sizeof(M)/sizeof(M[0]);
+                EXPECT_DOUBLE_EQ(mean(M, n), 5);
+        }
+	{
+                double M[] = {-5, -4, -3, -2 ,-1 ,0, 1, 2, 3, 4, 5};
+                int n = sizeof(M)/sizeof(M[0]);
+                EXPECT_DOUBLE_EQ(mean(M, n), 0);
+        }
+
+}
+
+TEST(MATH_STATISTICS, var){
+        using math::statistics::var;
+        {
+                double M[] = {1,1,1,1,1,1,1,1,1,1};
+                int n = sizeof(M)/sizeof(M[0]);
+                EXPECT_DOUBLE_EQ(var(M, n), 0);
+        }
+        {
+                double M[] = {1, -1, 1, -1, 1, -1, 1, -1, 1, -1};
+                int n = sizeof(M)/sizeof(M[0]);
+                EXPECT_DOUBLE_EQ(var(M, n), 1.0);
+        }
+        {
+                double M[] = {-5, -4, -3, -2 ,-1 ,0, 1, 2, 3, 4, 5};
+                int n = sizeof(M)/sizeof(M[0]);
+                EXPECT_DOUBLE_EQ(var(M, n), 10.0);
+        }
+
+}
