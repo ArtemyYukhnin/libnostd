@@ -4,10 +4,6 @@
  * @author YAS
 */
 
-/**
- * @todo Добавить тесты для statistics
-*/
-
 namespace math{
 namespace statistics{
 	/**

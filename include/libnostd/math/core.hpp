@@ -2,15 +2,14 @@
 #define LIBNOSTD_MATH_CORE_HPP
 /**
  * @brief Basic mathematical utils
- * @todo Сделать полное покрытие тестами функций из math/core.hpp
 */
 namespace math{
 	/**
-	 * @brief Вычисление квадрата числа
-	 * @details Вычисление квадрата через умножение числа на самого себя
-	 * 	   (number * numer)
-	 * @param[in] num вещественное число
-	 * @return Квадрат числа
+	 * @brief	Вычисление квадрата числа
+	 * @details	Вычисление квадрата через умножение числа на самого себя
+	 *		(number * numer)
+	 * @param[in]	num вещественное число
+	 * @return	Квадрат числа
 	*/
 	double square(double num);
 	/**
@@ -70,23 +69,23 @@ namespace math{
 	unsigned long binpowmod(unsigned long a, unsigned long deg, unsigned long m);
 
         /**
-         * @brief Обратный по модулю
-         * @param[in] Положительное натуральное число.
-         * @param[in] Положительное простое число. Модуль.
-	 * @warning Числа должны быть взаимнопростые.
-         * @return обратный элемент по модулю
+         * @brief	Обратный по модулю
+         * @param[in]	Положительное натуральное число.
+         * @param[in]	Положительное простое число. Модуль.
+	 * @warning	Числа должны быть взаимнопростые.
+         * @return	обратный элемент по модулю
         */
 
 	unsigned long invmod(unsigned long a, unsigned long m);
 
         /**
-         * @brief расширенный алгоритм Евклида
-         * @details \f$ a \cdot x + b \cdot y = gcd(a,b) \f$
-         * @param[in] Положительное натуральное число a.
-         * @param[in] Положительное натуральное число b.
-         * @param[out] Ссылка на беззнаковое целое x.
-         * @param[out] Ссылка на беззнаковое целое y.
-         * @return Наибольший общий делитель a и b.
+         * @brief	расширенный алгоритм Евклида
+         * @details	\f$ a \cdot x + b \cdot y = gcd(a,b) \f$
+         * @param[in]	Положительное натуральное число a.
+         * @param[in]	Положительное натуральное число b.
+         * @param[out]	Ссылка на беззнаковое целое x.
+         * @param[out]	Ссылка на беззнаковое целое y.
+         * @return	Наибольший общий делитель a и b.
         */
 
 	unsigned long gcdex(unsigned long a, unsigned long b, unsigned long &x, unsigned long &y);
